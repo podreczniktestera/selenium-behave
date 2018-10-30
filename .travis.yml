@@ -1,4 +1,6 @@
 language: python
+addons:
+  chrome: stable
 env:
  - PYTHONPATH=`pwd`
 python:

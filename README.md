@@ -1,4 +1,4 @@
-# Przykład projektu Selenium - Behave
+# Przykład projektu Selenium - Behave [![Build Status](https://travis-ci.org/podreczniktestera/selenium-behave.svg?branch=master)](https://travis-ci.org/podreczniktestera/selenium-behave)
 
 #### Ustawienie projektu
 
