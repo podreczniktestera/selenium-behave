@@ -20,4 +20,4 @@
 * Należy zmienić interpreter Python'a tak aby wskazywał na wirtualne środowisko
 * Oraz dodać konfigurację do uruchamiania testów:
   * Script path - ścieżka do aplikacji `behave` z wirualnego środowiska
-  * Parameters - ścieżka do katalogu `google_tests\tests`
+  * Parameters - ścieżka do katalogu `google_tests/tests`
