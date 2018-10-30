@@ -1,0 +1,23 @@
+# Przykład projektu Selenium - Behave
+
+#### Ustawienie projektu
+
+###### CMD \ Terminal
+
+    git clone
+
+    cd selenium-behave
+
+    virtualenv venv --python=python
+
+    venv\Scripts\activate.bat
+      lub na Linuxie
+    source venv\Scripts\activate
+
+    pip install -r requirements.txt
+
+###### PyCharm CE
+* Należy zmienić interpreter Python'a tak aby wskazywał na wirtualne środowisko
+* Oraz dodać konfigurację do uruchamiania testów:
+  * Script path - ścieżka do aplikacji `behave` z wirualnego środowiska
+  * Parameters - ścieżka do katalogu `google_tests\tests`
