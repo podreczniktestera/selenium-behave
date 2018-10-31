@@ -3,7 +3,7 @@
 #### Ustawienie projektu
 
 ###### CMD \ Terminal
-
+```bash
     git clone
 
     cd selenium-behave
@@ -11,11 +11,11 @@
     virtualenv venv --python=python
 
     venv\Scripts\activate.bat
-      lub na Linuxie
-    source venv\Scripts\activate
+      # lub na Linuxie
+    source venv\bin\activate
 
     pip install -r requirements.txt
-
+```
 ###### PyCharm CE
 * Należy zmienić interpreter Python'a tak aby wskazywał na wirtualne środowisko
 * Oraz dodać konfigurację do uruchamiania testów:
