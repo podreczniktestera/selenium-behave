@@ -1,11 +1,10 @@
 dist: trusty
 language: python
 addons:
+  chrome: stable
   apt:
-    sources:
-      - google-chrome
     packages:
-      - google-chrome-stable
+      - chromium-chromedriver
 env:
  - PYTHONPATH=`pwd`
 python:
@@ -18,5 +17,7 @@ python:
 # command to install dependencies
 install:
   - "pip install -r requirements.txt"
+before_script:
+  - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
 # command to run tests
 script: behave
