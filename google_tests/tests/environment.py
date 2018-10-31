@@ -3,7 +3,11 @@ from selenium import webdriver
 
 
 def before_scenario(context, scenario):
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument('headless')
+    options.add_argument('window-size=1600x900')
+    
+    driver = webdriver.Chrome(chrome_options=options)
     context.driver = driver
 
 
