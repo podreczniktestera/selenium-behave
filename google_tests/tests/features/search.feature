@@ -17,6 +17,7 @@ Feature: Google search bar
           | python   |
           | selenium |
 
+
   @feeling_lucky_button
   Scenario: I'm feeling lucky
     Given user is at google home page

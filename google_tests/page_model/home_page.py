@@ -1,11 +1,12 @@
 # -*- coding: UTF-8 -*-
-from google_tests.page_model.base_page import BasePage
-from google_tests.locators.home_page import HomePageLocators
-from google_tests.helpers.page_loader import require_loaded
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
-from time import sleep
+from google_tests.helpers.page_loader import require_loaded
+from google_tests.locators.home_page import HomePageLocators
+from google_tests.page_model.base_page import BasePage
 
 
 class HomePage(BasePage):  
@@ -15,22 +16,22 @@ class HomePage(BasePage):
 
     @property
     def search_bar(self):
-        return self.driver.find_element(*HomePageLocators.SEARCH_BAR)
+        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(HomePageLocators.SEARCH_BAR))
 
     @property
     def search_button(self):
-        return self.driver.find_element(*HomePageLocators.SEARCH_BUTTON)
+        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(HomePageLocators.SEARCH_BUTTON))
 
     @property
     def feeling_lucky_button(self):
-        return self.driver.find_element(*HomePageLocators.FEELING_LUCKY_BUTTON)
+        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(HomePageLocators.FEELING_LUCKY_BUTTON))
 
     @property
     def is_loaded(self):
         try:
-            self.driver.find_element(*HomePageLocators.GOOGLE_LOGO)
+            WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(HomePageLocators.GOOGLE_LOGO))
             return True
-        except NoSuchElementException:
+        except TimeoutException:
             return False
 
     def load(self):
