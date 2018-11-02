@@ -28,7 +28,7 @@ class HomePage(BasePage):
     @property
     def is_loaded(self):
         try:
-            self.driver.find_element(*HomePageLocators.SEARCH_BAR)
+            self.driver.find_element(*HomePageLocators.GOOGLE_LOGO)
             return True
         except NoSuchElementException:
             return False
