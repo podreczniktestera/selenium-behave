@@ -26,12 +26,12 @@ def step_impl(context, thing, form):
         assert page_srp.link_contains_match_for(thing), \
             "Search results are not related to {}".format(thing)
     elif form == "is":
-        assert not page_srp.is_loaded
-        assert not page_hp.is_loaded
+        assert not page_srp.is_loaded, "Search results page is loaded when it shouldn't"
+        assert not page_hp.is_loaded, "Google home page is loaded when it shouldn't"
 
         assert "google" not in context.driver.title.lower(), \
             "Google is in page title: {}".format(context.driver.title.lower())
         assert thing.lower() in context.driver.title.lower(), \
             "{} is not in page title: {}".format(thing, context.driver.title.lower())
     else:
-        raise Exception(u'Unknown form')
+        raise Exception("Unknown form")

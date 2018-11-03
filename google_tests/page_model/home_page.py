@@ -16,20 +16,31 @@ class HomePage(BasePage):
 
     @property
     def search_bar(self):
-        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(HomePageLocators.SEARCH_BAR))
+        return WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(HomePageLocators.SEARCH_BAR),
+            "Search bar is not visible"
+        )
 
     @property
     def search_button(self):
-        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(HomePageLocators.SEARCH_BUTTON))
+        return WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(HomePageLocators.SEARCH_BUTTON),
+            "Search button is not visible"
+        )
 
     @property
     def feeling_lucky_button(self):
-        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(HomePageLocators.FEELING_LUCKY_BUTTON))
+        return WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(HomePageLocators.FEELING_LUCKY_BUTTON),
+            "I'm feeling lucky button is not visible"
+        )
 
     @property
     def is_loaded(self):
         try:
-            WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(HomePageLocators.GOOGLE_LOGO))
+            WebDriverWait(self.driver, 5).until(
+                EC.visibility_of_element_located(HomePageLocators.GOOGLE_LOGO)
+            )
             return True
         except TimeoutException:
             return False

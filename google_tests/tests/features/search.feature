@@ -15,7 +15,7 @@ Feature: Google search bar
          Examples:
           | thing    |
           | python   |
-          | selenium |
+          | 234153   |
 
 
   @feeling_lucky_button
