@@ -12,7 +12,7 @@
 
     venv\Scripts\activate.bat
       # lub na Linuxie
-    source venv\bin\activate
+    source venv/bin/activate
 
     pip install -r requirements.txt
 ```

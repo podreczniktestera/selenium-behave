@@ -25,5 +25,3 @@ Feature: Google search bar
       And clicks on "I'm feeling lucky" button
      Then waits for page to finish loading
       And result for "chromedriver" is displayed
-
-   
