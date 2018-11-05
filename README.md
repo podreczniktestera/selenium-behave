@@ -4,7 +4,7 @@
 
 ###### CMD \ Terminal
 ```bash
-    git clone
+    git clone https://github.com/podreczniktestera/selenium-behave.git
 
     cd selenium-behave
 
